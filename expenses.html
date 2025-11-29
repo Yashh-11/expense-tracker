@@ -219,7 +219,7 @@
 
           <div class="mb-3">
             <label class="form-label">Category</label>
-            <select id="category" class="form-select glass-select" required>
+            <select id="category" class="form-select glass-select text-white" required>
               <option value="">Select category</option>
               <option>Food</option>
               <option>Travel</option>
@@ -328,7 +328,7 @@
           <td>${e.name}</td>
           <td class="amount-cell">₹${e.amount}</td>
           <td>${e.date}</td>
-          <td><span class="badge bg-slate-700 badge-category">${e.category}</span></td>
+          <td><span class="badge bg-slate-700 badge-category text-black">${e.category}</span></td>
           <td class="text-end">
             <button class="btn btn-sm btn-outline-light-custom me-1" onclick='edit(${e.id})'>Edit</button>
             <button class="btn btn-sm btn-outline-danger" onclick='del(${e.id})'>Del</button>
