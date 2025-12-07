@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>ExpenseHub - Sign Up</title>
@@ -34,13 +35,14 @@
         border-radius: 16px;
         margin: 16px;
       }
+
       .auth-side-info {
         display: none;
       }
     }
 
     .auth-side-info {
-      background: linear-gradient(145deg, rgba(59,130,246,0.25), rgba(236,72,153,0.25));
+      background: linear-gradient(145deg, rgba(59, 130, 246, 0.25), rgba(236, 72, 153, 0.25));
       padding: 40px 36px;
       border-right: 1px solid rgba(148, 163, 184, 0.25);
     }
@@ -74,10 +76,10 @@
     }
 
     .glass-input {
-      background: rgba(15,23,42,0.85);
+      background: rgba(15, 23, 42, 0.85);
       border-radius: 12px;
       padding: 10px 12px;
-      border: 1px solid rgba(148,163,184,0.35);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       color: #e5e7eb;
       font-size: 0.9rem;
     }
@@ -85,8 +87,8 @@
     .glass-input:focus {
       outline: none;
       border-color: #6366f1;
-      box-shadow: 0 0 0 1px rgba(129,140,248,0.7);
-      background: rgba(15,23,42,0.95);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.7);
+      background: rgba(15, 23, 42, 0.95);
       color: #f9fafb;
     }
 
@@ -105,7 +107,7 @@
       font-weight: 600;
       font-size: 0.95rem;
       padding-block: 10px;
-      box-shadow: 0 14px 40px rgba(79,70,229,0.55);
+      box-shadow: 0 14px 40px rgba(79, 70, 229, 0.55);
     }
 
     .btn-primary-custom:hover {
@@ -135,107 +137,111 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="auth-wrapper">
-  <!-- Left side info -->
-  <div class="auth-side-info">
-    <div class="brand-pill">
-      <span>💰 ExpenseHub</span>
-      <span class="badge bg-success bg-opacity-75 border-0">v1.0</span>
+  <div class="auth-wrapper">
+    <!-- Left side info -->
+    <div class="auth-side-info">
+      <div class="brand-pill">
+        <span>💰 ExpenseHub</span>
+        <span class="badge bg-success bg-opacity-75 border-0">v1.0</span>
+      </div>
+
+      <h1>Track every rupee, effortlessly.</h1>
+      <p class="mt-3">
+        ExpenseHub helps you log, sort, and analyze your daily spending.
+        Multiple users, private dashboards, and a smooth, minimal UI.
+      </p>
+
+      <ul class="mt-4 ps-3" style="font-size: 0.85rem; color:#e5e7eb;">
+        <li class="mb-1">Personalized expense history per user</li>
+        <li class="mb-1">Category-based filtering and sorting</li>
+        <li class="mb-1">Secure account for each user</li>
+      </ul>
+
+      <p class="mt-4" style="font-size: 0.8rem; color:#9ca3af;">
+        Tip: Use a valid email and a strong password. You can log in anytime later with the same credentials.
+      </p>
     </div>
 
-    <h1>Track every rupee, effortlessly.</h1>
-    <p class="mt-3">
-      ExpenseHub helps you log, sort, and analyze your daily spending.  
-      Multiple users, private dashboards, and a smooth, minimal UI.
-    </p>
+    <!-- Right side form -->
+    <div class="auth-side-main">
+      <h4 class="mb-1">Create your account</h4>
+      <p class="text-muted mb-3" style="font-size: 0.85rem;">Sign up to start managing your expenses.</p>
 
-    <ul class="mt-4 ps-3" style="font-size: 0.85rem; color:#e5e7eb;">
-      <li class="mb-1">Personalized expense history per user</li>
-      <li class="mb-1">Category-based filtering and sorting</li>
-      <li class="mb-1">Secure account for each user</li>
-    </ul>
+      <div id="message" class="alert d-none" role="alert"></div>
 
-    <p class="mt-4" style="font-size: 0.8rem; color:#9ca3af;">
-      Tip: Use a valid email and a strong password. You can log in anytime later with the same credentials.
-    </p>
+      <form id="signupForm" class="mt-2">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control glass-input" placeholder="e.g. Yash Patel" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control glass-input" placeholder="you@example.com" required>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" id="password" class="form-control glass-input" placeholder="Min. 6 characters"
+              required>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control glass-input" placeholder="Re-enter password"
+              required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary-custom w-100 mt-1">
+          Create Account
+        </button>
+
+        <p class="text-center mt-3 mb-0 small-link">
+          Already have an account?
+          <a href="login.html">Sign in instead</a>
+        </p>
+      </form>
+    </div>
   </div>
 
-  <!-- Right side form -->
-  <div class="auth-side-main">
-    <h4 class="mb-1">Create your account</h4>
-    <p class="text-muted mb-3" style="font-size: 0.85rem;">Sign up to start managing your expenses.</p>
+  <script src="config.js"></script>
+  <script>
+    // ✅ JS code unchanged (localStorage signup)
+    const form = document.getElementById("signupForm");
+    const msg = document.getElementById("message");
 
-    <div id="message" class="alert d-none" role="alert"></div>
+    form.addEventListener("submit", e => {
+      e.preventDefault();
 
-    <form id="signupForm" class="mt-2">
-      <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" id="name" class="form-control glass-input" placeholder="e.g. Yash Patel" required>
-      </div>
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let pass = document.getElementById("password").value;
+      let cpass = document.getElementById("confirmPassword").value;
 
-      <div class="mb-3">
-        <label class="form-label">Email Address</label>
-        <input type="email" id="email" class="form-control glass-input" placeholder="you@example.com" required>
-      </div>
+      if (pass !== cpass) return show("Passwords do not match!", "danger");
 
-      <div class="row">
-        <div class="col-sm-6 mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" id="password" class="form-control glass-input" placeholder="Min. 6 characters" required>
-        </div>
-        <div class="col-sm-6 mb-3">
-          <label class="form-label">Confirm Password</label>
-          <input type="password" id="confirmPassword" class="form-control glass-input" placeholder="Re-enter password" required>
-        </div>
-      </div>
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
 
-      <button type="submit" class="btn btn-primary-custom w-100 mt-1">
-        Create Account
-      </button>
+      if (users.some(u => u.email === email))
+        return show("Email already registered!", "warning");
 
-      <p class="text-center mt-3 mb-0 small-link">
-        Already have an account?
-        <a href="login.html">Sign in instead</a>
-      </p>
-    </form>
-  </div>
-</div>
+      users.push({ name, email, password: pass });
+      localStorage.setItem("users", JSON.stringify(users));
+      show("Signup successful! Redirecting to login...", "success");
 
-<script src="config.js"></script>
-<script>
-  // ✅ JS code unchanged (localStorage signup)
-  const form = document.getElementById("signupForm");
-  const msg = document.getElementById("message");
+      setTimeout(() => location.href = "login.html", 1000);
+    });
 
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let pass = document.getElementById("password").value;
-    let cpass = document.getElementById("confirmPassword").value;
-
-    if (pass !== cpass) return show("Passwords do not match!", "danger");
-
-    let users = JSON.parse(localStorage.getItem("users") || "[]");
-
-    if (users.some(u => u.email === email))
-      return show("Email already registered!", "warning");
-
-    users.push({ name, email, password: pass });
-    localStorage.setItem("users", JSON.stringify(users));
-    show("Signup successful! Redirecting to login...", "success");
-
-    setTimeout(() => location.href = "login.html", 1000);
-  });
-
-  function show(text, type) {
-    msg.textContent = text;
-    msg.className = `alert alert-${type}`;
-    msg.classList.remove("d-none");
-  }
-</script>
+    function show(text, type) {
+      msg.textContent = text;
+      msg.className = `alert alert-${type}`;
+      msg.classList.remove("d-none");
+    }
+  </script>
 </body>
+
 </html>

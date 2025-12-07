@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>ExpenseHub - Dashboard</title>
@@ -14,8 +15,8 @@
     }
 
     .navbar-custom {
-      background: rgba(15,23,42,0.98) !important;
-      border-bottom: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15, 23, 42, 0.98) !important;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
       backdrop-filter: blur(12px);
     }
 
@@ -30,9 +31,9 @@
       font-size: 0.7rem;
       padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(56,189,248,0.15);
+      background: rgba(56, 189, 248, 0.15);
       color: #7dd3fc;
-      border: 1px solid rgba(56,189,248,0.45);
+      border: 1px solid rgba(56, 189, 248, 0.45);
     }
 
     .main-wrapper {
@@ -46,10 +47,10 @@
     }
 
     .glass-card {
-      background: rgba(15,23,42,0.96);
+      background: rgba(15, 23, 42, 0.96);
       border-radius: 20px;
-      border: 1px solid rgba(55,65,81,0.8);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.7);
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.7);
     }
 
     .section-title {
@@ -65,20 +66,22 @@
       color: #9ca3af;
     }
 
-    .glass-input, .glass-select {
-      background: rgba(15,23,42,0.88);
+    .glass-input,
+    .glass-select {
+      background: rgba(15, 23, 42, 0.88);
       border-radius: 12px;
-      border: 1px solid rgba(75,85,99,0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
       color: #e5e7eb;
       font-size: 0.9rem;
       padding: 9px 11px;
     }
 
-    .glass-input:focus, .glass-select:focus {
+    .glass-input:focus,
+    .glass-select:focus {
       outline: none;
       border-color: #6366f1;
-      box-shadow: 0 0 0 1px rgba(129,140,248,0.7);
-      background: rgba(15,23,42,0.96);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.7);
+      background: rgba(15, 23, 42, 0.96);
     }
 
     .btn-save {
@@ -87,7 +90,7 @@
       border: none;
       font-size: 0.9rem;
       font-weight: 600;
-      box-shadow: 0 16px 40px rgba(79,70,229,0.6);
+      box-shadow: 0 16px 40px rgba(79, 70, 229, 0.6);
     }
 
     .btn-save:hover {
@@ -97,7 +100,7 @@
 
     .btn-outline-light-custom {
       border-radius: 999px;
-      border-color: rgba(148,163,184,0.65);
+      border-color: rgba(148, 163, 184, 0.65);
       color: #e5e7eb;
       font-size: 0.8rem;
       padding-inline: 12px;
@@ -105,8 +108,8 @@
     }
 
     .btn-outline-light-custom:hover {
-      background: rgba(148,163,184,0.16);
-      border-color: rgba(209,213,219,0.9);
+      background: rgba(148, 163, 184, 0.16);
+      border-color: rgba(209, 213, 219, 0.9);
     }
 
     table {
@@ -115,11 +118,11 @@
     }
 
     thead {
-      background: rgba(15,23,42,0.98);
+      background: rgba(15, 23, 42, 0.98);
     }
 
     thead th {
-      border-bottom-color: rgba(55,65,81,0.9) !important;
+      border-bottom-color: rgba(55, 65, 81, 0.9) !important;
       font-weight: 500;
       color: #9ca3af;
       text-transform: uppercase;
@@ -127,15 +130,15 @@
     }
 
     tbody tr {
-      border-color: rgba(31,41,55,0.9);
+      border-color: rgba(31, 41, 55, 0.9);
     }
 
     tbody tr:nth-child(even) {
-      background: rgba(15,23,42,0.9);
+      background: rgba(15, 23, 42, 0.9);
     }
 
     tbody tr:nth-child(odd) {
-      background: rgba(15,23,42,0.8);
+      background: rgba(15, 23, 42, 0.8);
     }
 
     .amount-cell {
@@ -165,165 +168,166 @@
     }
   </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
-  <div class="container-fluid px-3 px-lg-4">
-    <span class="brand-title d-flex align-items-center gap-2">
-      ExpenseHub
-      <span class="brand-badge">Dashboard</span>
-    </span>
-    <div class="d-flex align-items-center gap-3 ms-auto">
-      <span id="userName" class="text-sm text-muted" style="font-size: 0.85rem;"></span>
-      <button class="btn btn-outline-light-custom" onclick="logout()">Logout</button>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container-fluid px-3 px-lg-4">
+      <span class="brand-title d-flex align-items-center gap-2">
+        ExpenseHub
+        <span class="brand-badge">Dashboard</span>
+      </span>
+      <div class="d-flex align-items-center gap-3 ms-auto">
+        <span id="userName" class="text-sm text-muted" style="font-size: 0.85rem;"></span>
+        <button class="btn btn-outline-light-custom" onclick="logout()">Logout</button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="main-wrapper">
-  <div class="row g-4">
-    <!-- Left column: Form -->
-    <div class="col-lg-4">
-      <div class="glass-card p-3 p-md-4 h-100">
-        <div class="d-flex justify-content-between align-items-center mb-1">
-          <div>
-            <div class="section-title">New Expense</div>
-            <h5 class="mb-0" id="formHeading">Add expense entry</h5>
-          </div>
-        </div>
-
-        <p class="text-muted mb-3" style="font-size: 0.8rem;">
-          Quickly log your daily purchases. You can always edit or delete them later.
-        </p>
-
-        <div id="message" class="alert d-none" role="alert"></div>
-
-        <form id="expenseForm" class="mt-2">
-          <input type="hidden" id="editId">
-
-          <div class="mb-2">
-            <label class="form-label">Expense Name</label>
-            <input id="name" class="form-control glass-input" placeholder="e.g. Zomato order" required>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-6 mb-2">
-              <label class="form-label">Amount (₹)</label>
-              <input type="number" id="amount" min="1" class="form-control glass-input" placeholder="0.00" required>
-            </div>
-            <div class="col-sm-6 mb-2">
-              <label class="form-label">Date</label>
-              <input type="date" id="date" class="form-control glass-input" required>
+  <div class="main-wrapper">
+    <div class="row g-4">
+      <!-- Left column: Form -->
+      <div class="col-lg-4">
+        <div class="glass-card p-3 p-md-4 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <div>
+              <div class="section-title">New Expense</div>
+              <h5 class="mb-0" id="formHeading">Add expense entry</h5>
             </div>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label">Category</label>
-            <select id="category" class="form-select glass-select text-white" required>
-              <option value="">Select category</option>
-              <option>Food</option>
-              <option>Travel</option>
-              <option>Bills</option>
-              <option>Shopping</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn btn-save w-100 mt-1">
-            Save Expense
-          </button>
-
-          <p class="summary-pill mt-2 mb-0">
-            Tip: Use clear names like “Bus pass”, “Electricity bill”, etc. Makes history easier to read.
+          <p class="text-muted mb-3" style="font-size: 0.8rem;">
+            Quickly log your daily purchases. You can always edit or delete them later.
           </p>
-        </form>
+
+          <div id="message" class="alert d-none" role="alert"></div>
+
+          <form id="expenseForm" class="mt-2">
+            <input type="hidden" id="editId">
+
+            <div class="mb-2">
+              <label class="form-label">Expense Name</label>
+              <input id="name" class="form-control glass-input" placeholder="e.g. Zomato order" required>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 mb-2">
+                <label class="form-label">Amount (₹)</label>
+                <input type="number" id="amount" min="1" class="form-control glass-input" placeholder="0.00" required>
+              </div>
+              <div class="col-sm-6 mb-2">
+                <label class="form-label">Date</label>
+                <input type="date" id="date" class="form-control glass-input" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Category</label>
+              <select id="category" class="form-select glass-select text-white" required>
+                <option value="">Select category</option>
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Bills</option>
+                <option>Shopping</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-save w-100 mt-1">
+              Save Expense
+            </button>
+
+            <p class="summary-pill mt-2 mb-0">
+              Tip: Use clear names like “Bus pass”, “Electricity bill”, etc. Makes history easier to read.
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <!-- Right column: Table + filters -->
-    <div class="col-lg-8">
-      <div class="glass-card p-3 p-md-4">
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
-          <div>
-            <div class="section-title mb-1">Expense History</div>
-            <h5 class="mb-0">Your logged expenses</h5>
+      <!-- Right column: Table + filters -->
+      <div class="col-lg-8">
+        <div class="glass-card p-3 p-md-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+            <div>
+              <div class="section-title mb-1">Expense History</div>
+              <h5 class="mb-0">Your logged expenses</h5>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <select id="sortDate" class="form-select form-select-sm glass-select" style="width: 160px;">
+                <option value="desc">Newest first</option>
+                <option value="asc">Oldest first</option>
+              </select>
+              <select id="filter" class="form-select form-select-sm glass-select" style="width: 160px;">
+                <option value="all">All categories</option>
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Bills</option>
+                <option>Shopping</option>
+                <option>Other</option>
+              </select>
+            </div>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
-            <select id="sortDate" class="form-select form-select-sm glass-select" style="width: 160px;">
-              <option value="desc">Newest first</option>
-              <option value="asc">Oldest first</option>
-            </select>
-            <select id="filter" class="form-select form-select-sm glass-select" style="width: 160px;">
-              <option value="all">All categories</option>
-              <option>Food</option>
-              <option>Travel</option>
-              <option>Bills</option>
-              <option>Shopping</option>
-              <option>Other</option>
-            </select>
+          <div class="table-responsive rounded-3" style="border: 1px solid rgba(55,65,81,0.9); overflow: hidden;">
+            <table class="table mb-0 align-middle">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Amount (₹)</th>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th class="text-end" style="width: 130px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- rows rendered by JS -->
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        <div class="table-responsive rounded-3" style="border: 1px solid rgba(55,65,81,0.9); overflow: hidden;">
-          <table class="table mb-0 align-middle">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Amount (₹)</th>
-                <th>Date</th>
-                <th>Category</th>
-                <th class="text-end" style="width: 130px;">Actions</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- rows rendered by JS -->
-            </tbody>
-          </table>
+          <p id="emptyText" class="text-muted mt-3 mb-0" style="font-size: 0.85rem; display:none;">
+            You haven’t added any expenses yet. Start by logging your first transaction on the left.
+          </p>
         </div>
-
-        <p id="emptyText" class="text-muted mt-3 mb-0" style="font-size: 0.85rem; display:none;">
-          You haven’t added any expenses yet. Start by logging your first transaction on the left.
-        </p>
       </div>
     </div>
   </div>
-</div>
 
-<script src="config.js"></script>
-<script>
-  // ✅ JS code unchanged (localStorage-based dashboard)
+  <script src="config.js"></script>
+  <script>
+    // ✅ JS code unchanged (localStorage-based dashboard)
 
-  const user = getCurrentUser();
-  if (!user) location.href="login.html";
-  document.getElementById("userName").textContent = `Hi, ${user.name}!`;
+    const user = getCurrentUser();
+    if (!user) location.href = "login.html";
+    document.getElementById("userName").textContent = `Hi, ${user.name}!`;
 
-  let all = JSON.parse(localStorage.getItem("expenses-"+user.email) || "[]");
+    let all = JSON.parse(localStorage.getItem("expenses-" + user.email) || "[]");
 
-  function save() {
-    localStorage.setItem("expenses-"+user.email, JSON.stringify(all));
-  }
-
-  function render() {
-    let sort = document.getElementById("sortDate").value;
-    let filter = document.getElementById("filter").value;
-
-    let list = [...all];
-    if (filter !== "all") list = list.filter(x => x.category === filter);
-    list.sort((a,b) => sort==="asc" ? new Date(a.date)-new Date(b.date) : new Date(b.date)-new Date(a.date));
-
-    const tbody = document.getElementById("tableBody");
-    tbody.innerHTML = "";
-
-    if (list.length === 0) {
-      document.getElementById("emptyText").style.display = "block";
-      return;
-    } else {
-      document.getElementById("emptyText").style.display = "none";
+    function save() {
+      localStorage.setItem("expenses-" + user.email, JSON.stringify(all));
     }
 
-    list.forEach(e => {
-      tbody.innerHTML += `
+    function render() {
+      let sort = document.getElementById("sortDate").value;
+      let filter = document.getElementById("filter").value;
+
+      let list = [...all];
+      if (filter !== "all") list = list.filter(x => x.category === filter);
+      list.sort((a, b) => sort === "asc" ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date));
+
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
+
+      if (list.length === 0) {
+        document.getElementById("emptyText").style.display = "block";
+        return;
+      } else {
+        document.getElementById("emptyText").style.display = "none";
+      }
+
+      list.forEach(e => {
+        tbody.innerHTML += `
         <tr>
           <td>${e.name}</td>
           <td class="amount-cell">₹${e.amount}</td>
@@ -334,55 +338,56 @@
             <button class="btn btn-sm btn-outline-danger" onclick='del(${e.id})'>Del</button>
           </td>
         </tr>`;
+      });
+    }
+
+    document.getElementById("expenseForm").addEventListener("submit", e => {
+      e.preventDefault();
+      let id = document.getElementById("editId").value;
+      let obj = {
+        id: id ? Number(id) : Date.now(),
+        name: document.getElementById("name").value,
+        amount: document.getElementById("amount").value,
+        date: document.getElementById("date").value,
+        category: document.getElementById("category").value
+      };
+
+      if (id) {
+        all = all.map(x => x.id == id ? obj : x);
+      } else all.push(obj);
+
+      save();
+      render();
+      e.target.reset();
+      document.getElementById("editId").value = "";
     });
-  }
 
-  document.getElementById("expenseForm").addEventListener("submit", e=>{
-    e.preventDefault();
-    let id = document.getElementById("editId").value;
-    let obj = {
-      id: id? Number(id): Date.now(),
-      name: document.getElementById("name").value,
-      amount: document.getElementById("amount").value,
-      date: document.getElementById("date").value,
-      category: document.getElementById("category").value
-    };
+    function edit(id) {
+      const e = all.find(x => x.id == id);
+      document.getElementById("editId").value = e.id;
+      document.getElementById("name").value = e.name;
+      document.getElementById("amount").value = e.amount;
+      document.getElementById("date").value = e.date;
+      document.getElementById("category").value = e.category;
+    }
 
-    if (id){
-      all = all.map(x=> x.id==id ? obj:x);
-    } else all.push(obj);
+    function del(id) {
+      if (!confirm("Are you sure you want to delete this expense?")) return;
+      all = all.filter(x => x.id != id);
+      save();
+      render();
+    }
 
-    save();
+    document.getElementById("sortDate").onchange = render;
+    document.getElementById("filter").onchange = render;
+
+    // Initialize date field with today
+    try {
+      document.getElementById("date").valueAsDate = new Date();
+    } catch (e) { }
+
     render();
-    e.target.reset();
-    document.getElementById("editId").value="";
-  });
-
-  function edit(id){
-    const e = all.find(x=>x.id==id);
-    document.getElementById("editId").value=e.id;
-    document.getElementById("name").value=e.name;
-    document.getElementById("amount").value=e.amount;
-    document.getElementById("date").value=e.date;
-    document.getElementById("category").value=e.category;
-  }
-
-  function del(id){
-    if(!confirm("Are you sure you want to delete this expense?"))return;
-    all = all.filter(x=>x.id!=id);
-    save();
-    render();
-  }
-
-  document.getElementById("sortDate").onchange=render;
-  document.getElementById("filter").onchange=render;
-
-  // Initialize date field with today
-  try {
-    document.getElementById("date").valueAsDate = new Date();
-  } catch(e){}
-
-  render();
-</script>
+  </script>
 </body>
+
 </html>
